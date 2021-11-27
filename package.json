@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node ./scripts/gen_feed && next build",
     "start": "next start",
     "build-feed": "node ./scripts/gen_feed"
   },
