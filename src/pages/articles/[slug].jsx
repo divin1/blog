@@ -21,6 +21,7 @@ function Article({ article }) {
         <title>{article.title}</title>
         <meta name="description" content={article.description} />
         <meta property="og:title" content={article.title} />
+        <meta property="og:type" content="article" />
         <meta property="og:description" content={article.excerpt} />
         <meta
           property="og:url"
