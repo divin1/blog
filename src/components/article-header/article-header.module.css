@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  flex-flow: column wrap;
+  margin-bottom: 2rem;
+}
+.title {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-xl);
+  color: var(--color-text-dark);
+}
+
+.date {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+}

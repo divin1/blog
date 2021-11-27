@@ -1,0 +1,26 @@
+.article {
+  width: 100%;
+  height: auto;
+  padding-top: 2rem;
+}
+
+.article__title {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-lg);
+  color: var(--color-text-dark);
+  margin-bottom: 0.5rem;
+  position: relative;
+  cursor: pointer;
+}
+.article__title:hover {
+  color: var(--color-primary);
+}
+.article__excerpt {
+  color: var(--color-text-light);
+}
+
+.article__footer {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+}

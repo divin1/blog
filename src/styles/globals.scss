@@ -1,0 +1,75 @@
+:root {
+  /* typography */
+  --font-primary: "Nunito", sans-serif;
+  --font-secondary: "Nunito", sans-serif;
+  --font-mono: "Roboto Mono", sans-serif;
+  --font-size-base: 19px;
+  --font-size-xs: 14px;
+  --font-size-sm: 17px;
+  --font-size-lg: 32px;
+  --font-size-xl: 48px;
+  --font-line-height-base: 1.3;
+  --font-weight-base: 400;
+  --font-weight-light: 300;
+  --font-weight-bold: 700;
+
+  /* colors */
+  --color-body: #fff;
+  --color-headings: #000;
+  --color-text-base: #000000cc;
+  --color-text-light: #808080;
+  --color-text-dark: #000;
+  --color-primary: #ff2165;
+  --color-secondary: #fcb045;
+  --color-accent: #d944a4;
+}
+
+/* reset */
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-base);
+  line-height: var(--font-line-height-base);
+  word-wrap: break-word;
+  word-break: break-word;
+  color: var(--color-text-2);
+  background-color: var(--color-bg-6);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+article,
+footer,
+header,
+main,
+nav,
+section {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-extra-bold);
+  margin-top: 0;
+}
+
+/* global styles */
+
+a {
+  color: var(--color-primary);
+}

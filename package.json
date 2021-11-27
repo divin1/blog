@@ -5,11 +5,39 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "build-feed": "node ./scripts/gen_feed"
   },
   "dependencies": {
+    "@mdx-js/loader": "^1.6.22",
+    "@next/mdx": "^10.2.3",
+    "classnames": "^2.3.1",
     "next": "10.2.2",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "sass": "^1.43.5",
+    "trim": "^1.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^3.4.1",
+    "eslint-plugin-react": "^7.27.1",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "feed": "^4.2.2",
+    "fibers": "^5.0.0",
+    "fs": "0.0.1-security",
+    "gray-matter": "^4.0.3",
+    "path": "^0.12.7",
+    "postcss-remove-nested-calc": "^1.0.3",
+    "prettier": "^2.5.0",
+    "remark": "^13.0.0",
+    "remark-html": "^13.0.2",
+    "webpack": "^5.64.4"
   }
 }

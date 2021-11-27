@@ -1,0 +1,31 @@
+.footer {
+  width: 100%;
+  padding-top: 3rem;
+  padding-bottom: 2vh;
+}
+
+.items {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.links {
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-end;
+}
+.links a {
+  color: var(--color-text-light);
+  padding: 1rem;
+}
+.links a:hover {
+  color: var(--color-text-base);
+}
+
+@media only screen and (max-width: 1024px) {
+  .items {
+    flex-flow: column wrap;
+    text-align: center;
+  }
+}
