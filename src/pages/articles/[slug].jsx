@@ -7,6 +7,7 @@ import ErrorPage from "next/error";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import styles from "styles/article.module.css";
+import config from "../../../config";
 
 function Article({ article }) {
   const router = useRouter();
@@ -21,6 +22,11 @@ function Article({ article }) {
         <meta name="description" content={article.description} />
         <meta property="og:title" content={article.title} />
         <meta property="og:description" content={article.excerpt} />
+        <meta
+          property="og:url"
+          content={`${config.siteUrl}/articles/${article.slug}`}
+        />
+        <meta property="og:image" content={`${config.siteUrl}/banner.jpg`} />
       </Head>
       <article className={styles.article}>
         <ArticleHeader
