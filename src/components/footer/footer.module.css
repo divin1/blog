@@ -23,8 +23,8 @@
   color: var(--color-text-base);
 }
 
-@media only screen and (max-width: 1024px) {
-  .items {
+@media screen and (max-width: 455px) {
+  .links {
     flex-flow: column wrap;
     text-align: center;
   }
