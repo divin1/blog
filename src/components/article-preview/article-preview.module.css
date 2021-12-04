@@ -7,7 +7,7 @@
 .article__title {
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-lg);
-  color: var(--color-text-dark);
+  color: var(--color-headings);
   margin-bottom: 0.5rem;
   position: relative;
   cursor: pointer;
@@ -16,11 +16,11 @@
   color: var(--color-primary);
 }
 .article__excerpt {
-  color: var(--color-text-light);
+  color: var(--color-text);
 }
 
 .article__footer {
   font-family: var(--font-primary);
   font-size: var(--font-size-sm);
-  color: var(--color-text-light);
+  color: var(--color-text);
 }

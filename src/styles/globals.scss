@@ -15,10 +15,21 @@
 
   /* colors */
   --color-body: #fff;
+  --color-body-invert-rgb: 12, 12, 12;
   --color-headings: #000;
-  --color-text-base: #000000cc;
-  --color-text-light: #808080;
-  --color-text-dark: #000;
+  --color-text-highlight: #000000cc;
+  --color-text: #808080;
+  --color-primary: #ff2165;
+  --color-secondary: #fcb045;
+  --color-accent: #d944a4;
+}
+
+[data-theme="dark"] {
+  --color-body: #121212;
+  --color-body-invert-rgb: 255, 255, 255;
+  --color-headings: #fff;
+  --color-text-highlight: #b3b3b3;
+  --color-text: #808080;
   --color-primary: #ff2165;
   --color-secondary: #fcb045;
   --color-accent: #d944a4;

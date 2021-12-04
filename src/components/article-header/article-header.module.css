@@ -6,11 +6,11 @@
 .title {
   font-family: var(--font-primary);
   font-size: var(--font-size-xl);
-  color: var(--color-text-dark);
+  color: var(--color-headings);
 }
 
 .date {
   font-family: var(--font-mono);
   font-size: var(--font-size-sm);
-  color: var(--color-text-light);
+  color: var(--color-text);
 }

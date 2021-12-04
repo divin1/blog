@@ -2,6 +2,8 @@ import Link from "next/link";
 
 import styles from "./header.module.css";
 
+import ThemeChanger from "components/theme-changer";
+
 const Header = () => {
   return (
     <header className={styles.header}>
@@ -10,6 +12,7 @@ const Header = () => {
           <div className={styles.sunset}></div>
         </Link>
         <Link href="/about">About</Link>
+        <ThemeChanger />
       </nav>
     </header>
   );
