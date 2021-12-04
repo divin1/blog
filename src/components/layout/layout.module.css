@@ -1,6 +1,7 @@
 .main {
   width: 100%;
-  min-height: 100vh;
+  min-height: 70vh;
+  overflow-x: hidden;
 }
 
 .content {
@@ -9,6 +10,7 @@
   padding-left: 1rem;
   margin-right: auto;
   margin-left: auto;
+  word-break: break-all;
 }
 
 @media screen and (max-width: 767px) {
@@ -20,7 +22,7 @@
 
 @media screen and (min-width: 767px) {
   .content {
-    max-width: 900px;
+    max-width: 75ch;
     padding: 0 4rem;
   }
 }
