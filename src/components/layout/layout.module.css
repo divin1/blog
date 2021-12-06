@@ -10,7 +10,7 @@
   padding-left: 1rem;
   margin-right: auto;
   margin-left: auto;
-  word-break: break-all;
+  word-wrap: break-word;
 }
 
 @media screen and (max-width: 767px) {
