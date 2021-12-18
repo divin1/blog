@@ -4,24 +4,25 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:watch": "next-remote-watch ./src/articles",
     "build": "node ./scripts/gen_feed && next build",
     "start": "next start",
     "build-feed": "node ./scripts/gen_feed"
   },
   "dependencies": {
     "@heroicons/react": "^1.0.5",
-    "@mdx-js/loader": "^1.6.22",
-    "@next/mdx": "^10.2.3",
     "classnames": "^2.3.1",
     "next": "10.2.2",
+    "next-mdx-remote": "^3.0.8",
     "next-themes": "0.0.15",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "sass": "^1.43.5",
+    "react-google-charts": "^3.0.15",
+    "sass": "^1.45.0",
     "trim": "^1.0.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.16.0",
+    "@babel/core": "^7.16.5",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.3.0",
@@ -35,11 +36,10 @@
     "fibers": "^5.0.0",
     "fs": "0.0.1-security",
     "gray-matter": "^4.0.3",
+    "next-remote-watch": "^1.0.0",
     "path": "^0.12.7",
     "postcss-remove-nested-calc": "^1.0.3",
-    "prettier": "^2.5.0",
-    "remark": "^13.0.0",
-    "remark-html": "^13.0.2",
-    "webpack": "^5.64.4"
+    "prettier": "^2.5.1",
+    "webpack": "^5.65.0"
   }
 }
