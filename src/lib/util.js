@@ -1,11 +1,3 @@
-import remark from "remark";
-import html from "remark-html";
-
-export async function mdxToHtml(mdxContent) {
-  const result = await remark().use(html).process(mdxContent);
-  return result.toString();
-}
-
 // Over-simplified function to remove most of the md & html tags
 function mdxToText(mdxContent) {
   return (
@@ -35,6 +27,7 @@ function mdxToText(mdxContent) {
 
 export function getReadTime(mdxContent) {
   const text = mdxToText(mdxContent);
-  const wordsCount = text.split(/\s/).length;
-  return Math.max(parseInt(wordsCount / 200), 1);
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200;
+  return Math.ceil(words / wpm);
 }
