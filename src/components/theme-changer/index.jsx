@@ -4,11 +4,10 @@ import { SunIcon, MoonIcon } from "@heroicons/react/outline";
 
 function ThemeChanger() {
   const { theme, setTheme } = useTheme();
-  const isLightTheme = theme === "light";
 
   return (
-    <div className={styles.wrapper}>
-      {isLightTheme ? (
+    <div>
+      {theme === "light" ? (
         <MoonIcon className={styles.icon} onClick={() => setTheme("dark")} />
       ) : (
         <SunIcon className={styles.icon} onClick={() => setTheme("light")} />

@@ -1,6 +1,7 @@
 .main {
   width: 100%;
-  min-height: 70vh;
+  min-height: 91vh;
+  padding-top: 150px;
   overflow-x: hidden;
 }
 

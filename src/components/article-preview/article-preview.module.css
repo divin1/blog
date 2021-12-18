@@ -7,10 +7,11 @@
 .article__title {
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-lg);
-  color: var(--color-headings);
+  color: var(--color-text-variant);
   margin-bottom: 0.5rem;
   position: relative;
   cursor: pointer;
+  transition: color 1s;
 }
 .article__title:hover {
   color: var(--color-primary);
@@ -20,7 +21,7 @@
 }
 
 .article__footer {
-  font-family: var(--font-primary);
+  font-family: var(--font-family);
   font-size: var(--font-size-sm);
   color: var(--color-text);
 }

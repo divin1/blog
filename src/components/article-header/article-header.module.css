@@ -4,13 +4,13 @@
   margin-bottom: 2rem;
 }
 .title {
-  font-family: var(--font-primary);
+  font-family: var(--font-family);
   font-size: var(--font-size-xl);
-  color: var(--color-headings);
+  color: var(--color-text-variant);
 }
 
 .date {
-  font-family: var(--font-mono);
-  font-size: var(--font-size-sm);
+  font-family: var(--font-family);
+  font-size: var(--font-size-md);
   color: var(--color-text);
 }
