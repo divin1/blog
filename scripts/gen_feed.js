@@ -10,11 +10,11 @@ function getArticleSlugs() {
   return fs.readdirSync(articlesDir);
 }
 
-function getArticleBySlug(slug, fields = []) {
+async function getArticleBySlug(slug, fields = []) {
   const realSlug = slug.replace(".mdx", "");
   const fullPath = join(articlesDir, `${realSlug}.mdx`);
-  const fileContents = fs.readFileSync(fullPath, "utf-8");
-  const { data, content } = matter(fileContents);
+  const source = fs.readFileSync(fullPath, "utf-8");
+  const { content, data } = matter(source);
 
   const article = {};
 
@@ -33,10 +33,10 @@ function getArticleBySlug(slug, fields = []) {
   return article;
 }
 
-function getArticles(fields = []) {
+async function getArticles(fields = []) {
   const slugs = getArticleSlugs();
   const articles = slugs
-    .map((slug) => getArticleBySlug(slug, fields))
+    .map(async (slug) => await getArticleBySlug(slug, fields))
     .sort((a, b) => new Date(b.date) - new Date(a.date));
 
   return articles;
@@ -66,7 +66,7 @@ function getArticles(fields = []) {
     },
   });
 
-  const articles = getArticles([
+  const articles = await getArticles([
     "date",
     "title",
     "description",
@@ -96,10 +96,4 @@ function getArticles(fields = []) {
 
   const rssPath = join(process.cwd(), "/public/rss.xml");
   fs.writeFileSync(rssPath, feed.rss2());
-
-  const atomPath = join(process.cwd(), "/public/atom.xml");
-  fs.writeFileSync(atomPath, feed.atom1());
-
-  const jsonPath = join(process.cwd(), "/public/json.json");
-  fs.writeFileSync(jsonPath, feed.json1());
 })();
