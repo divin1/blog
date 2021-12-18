@@ -29,7 +29,7 @@ function Home({ articles }) {
 }
 
 export async function getStaticProps() {
-  const articles = getArticles([
+  const articles = await getArticles([
     "date",
     "title",
     "description",

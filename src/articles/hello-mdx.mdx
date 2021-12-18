@@ -1,0 +1,27 @@
+---
+date: "2021-06-24T18:29:02"
+title: Hello World 1
+excerpt: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+---
+
+import Button from "../components/button.js";
+import { Chart } from "react-google-charts";
+
+# Hello MDX!
+
+<Button>I'm a button</Button>
+
+## In this section there's a chart
+
+<Chart
+  chartType="ScatterChart"
+  data={[
+    ["Age", "Weight"],
+    [4, 5.5],
+    [8, 12],
+  ]}
+  width="100%"
+  height="400px"
+  legendToggle
+/>

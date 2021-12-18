@@ -2,7 +2,6 @@ import ArticleBody from "components/article-body";
 import ArticleHeader from "components/article-header";
 import Layout from "components/layout";
 import { getArticleBySlug, getArticles } from "lib/api";
-import { mdxToHtml } from "lib/util";
 import ErrorPage from "next/error";
 import Head from "next/head";
 import { useRouter } from "next/router";
@@ -42,7 +41,7 @@ function Article({ article }) {
 }
 
 export async function getStaticProps({ params }) {
-  const article = getArticleBySlug(params.slug, [
+  const article = await getArticleBySlug(params.slug, [
     "title",
     "description",
     "excerpt",
@@ -51,21 +50,16 @@ export async function getStaticProps({ params }) {
     "slug",
     "content",
   ]);
-  // parse content
-  const content = await mdxToHtml(article.content);
 
   return {
     props: {
-      article: {
-        ...article,
-        content,
-      },
+      article,
     },
   };
 }
 
 export async function getStaticPaths() {
-  const articles = getArticles(["slug"]);
+  const articles = await getArticles(["slug"]);
 
   return {
     paths: articles.map((a) => {
