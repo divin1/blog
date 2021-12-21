@@ -1,8 +1,8 @@
 import fs from "fs";
 import matter from "gray-matter";
 import { getReadTime } from "lib/util";
-import { join } from "path";
 import { serialize } from "next-mdx-remote/serialize";
+import { join } from "path";
 
 const articlesDir = join(process.cwd(), "src/articles");
 
@@ -47,10 +47,10 @@ export async function getArticleBySlug(slug, fields = []) {
 export async function getArticles(fields = []) {
   const slugs = getArticleSlugs();
   const articles = [];
-  for (const slug of slugs) {
-    const article = await getArticleBySlug(slug, fields);
-    articles.push(article);
-  }
+  slugs.forEach((slug) => {
+    articles.push(getArticleBySlug(slug, fields));
+  });
+  await Promise.all(articles);
   articles.sort((a, b) => new Date(b.date) - new Date(a.date));
   return articles;
 }

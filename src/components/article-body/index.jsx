@@ -1,12 +1,14 @@
-import styles from "./article-body.module.css";
+/* eslint-disable react/jsx-props-no-spreading */
 import Button from "components/button";
-import { Chart } from "react-google-charts";
 import { MDXRemote } from "next-mdx-remote";
+import { Chart } from "react-google-charts";
+
+import styles from "./article-body.module.css";
 
 // load components to pass to MDX
 const components = {
-  Button: Button,
-  Chart: Chart,
+  Button,
+  Chart,
 };
 
 function ArticleBody({ content }) {

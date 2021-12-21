@@ -31,3 +31,5 @@ export function getReadTime(mdxContent) {
   const wpm = 200;
   return Math.ceil(words / wpm);
 }
+
+export default { getReadTime };

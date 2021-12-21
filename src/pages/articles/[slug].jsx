@@ -6,6 +6,7 @@ import ErrorPage from "next/error";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import styles from "styles/article.module.css";
+
 import config from "../../../config";
 
 function Article({ article }) {
@@ -62,13 +63,11 @@ export async function getStaticPaths() {
   const articles = await getArticles(["slug"]);
 
   return {
-    paths: articles.map((a) => {
-      return {
-        params: {
-          slug: a.slug,
-        },
-      };
-    }),
+    paths: articles.map((a) => ({
+      params: {
+        slug: a.slug,
+      },
+    })),
     fallback: false,
   };
 }

@@ -1,7 +1,8 @@
 import Layout from "components/layout";
 import Head from "next/head";
-import config from "../../config";
 import styles from "styles/about.module.css";
+
+import config from "../../config";
 
 function About() {
   return (
@@ -42,7 +43,7 @@ function About() {
         <h2 className={styles.title}>Contact</h2>
         <p>
           Feel free to send me an email at{" "}
-          <a href="`mailto:${config.email}`">{config.email}</a>.
+          <a href={`mailto:${config.email}`}>{config.email}</a>.
         </p>
       </Layout>
     </>
