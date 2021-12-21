@@ -46,11 +46,11 @@ export async function getArticleBySlug(slug, fields = []) {
 
 export async function getArticles(fields = []) {
   const slugs = getArticleSlugs();
-  const articles = [];
+  let articles = [];
   slugs.forEach((slug) => {
     articles.push(getArticleBySlug(slug, fields));
   });
-  await Promise.all(articles);
+  articles = await Promise.all(articles);
   articles.sort((a, b) => new Date(b.date) - new Date(a.date));
   return articles;
 }
