@@ -31,7 +31,7 @@ const Header = () => {
     >
       <nav className="flex items-center p-6 space-x-4">
         <Link href="/" passHref>
-          <div className="bg-gradient-to-r from-rose-400 to-indigo-500 h-8 w-8 rounded-full cursor-pointer" />
+          <div className="bg-gradient-to-r from-rose-400 to-indigo-500 h-8 w-8 rounded-full cursor-pointer hover:animate-pulse" />
         </Link>
         <div className="grow" />
         <Link href="/" passHref>
