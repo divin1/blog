@@ -1,15 +1,12 @@
-import ArticleBody from "components/article-body";
-import ArticleHeader from "components/article-header";
-import Layout from "components/layout";
+import Article from "components/Article";
+import Container from "components/Container";
+import Layout from "components/Layout";
+import SEO from "components/SEO";
 import { getArticleBySlug, getArticles } from "lib/api";
 import ErrorPage from "next/error";
-import Head from "next/head";
 import { useRouter } from "next/router";
-import styles from "styles/article.module.css";
 
-import config from "../../../config";
-
-function Article({ article }) {
+function ArticleServer({ article }) {
   const router = useRouter();
   if (!router.isFallback && !article?.slug) {
     return <ErrorPage statusCode={404} />;
@@ -17,26 +14,14 @@ function Article({ article }) {
 
   return (
     <Layout>
-      <Head>
-        <title>{article.title}</title>
-        <meta name="description" content={article.description} />
-        <meta property="og:title" content={article.title} />
-        <meta property="og:type" content="article" />
-        <meta property="og:description" content={article.excerpt} />
-        <meta
-          property="og:url"
-          content={`${config.siteUrl}/articles/${article.slug}`}
-        />
-        <meta property="og:image" content={`${config.siteUrl}/banner.jpg`} />
-      </Head>
-      <article className={styles.article}>
-        <ArticleHeader
-          title={article.title}
-          date={article.date}
-          readTime={article.readTime}
-        />
-        <ArticleBody content={article.content} />
-      </article>
+      <SEO
+        title={article.title}
+        description={article.abstract}
+        ogType="article"
+      />
+      <Container>
+        <Article content={article.content} date={article.date} />
+      </Container>
     </Layout>
   );
 }
@@ -72,4 +57,4 @@ export async function getStaticPaths() {
   };
 }
 
-export default Article;
+export default ArticleServer;

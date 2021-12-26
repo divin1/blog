@@ -1,5 +1,5 @@
 const Feed = require('feed').Feed;
-const config = require('../config');
+const config = require('../src/config');
 const matter = require('gray-matter');
 const fs = require('fs');
 const join = require('path').join;

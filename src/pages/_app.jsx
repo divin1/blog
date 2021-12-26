@@ -1,11 +1,11 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import "styles/globals.scss";
+import "styles/main.scss";
 
 import { ThemeProvider } from "next-themes";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ThemeProvider>
+    <ThemeProvider attribute="class" defaultTheme="system">
       <Component {...pageProps} />
     </ThemeProvider>
   );

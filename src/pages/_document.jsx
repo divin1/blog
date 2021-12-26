@@ -9,14 +9,15 @@ export default class MyDocument extends Document {
           <link
             rel="preconnect"
             href="https://fonts.gstatic.com"
-            crossOrigin="true"
+            crossOrigin="anonymous"
           />
           <link
-            href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap"
             rel="stylesheet"
           />
+          <link rel="alternate" type="application/rss+xml" href="/rss.xml" />
         </Head>
-        <body>
+        <body className="antialiased bg-stone-100 dark:bg-stone-900 text-stone-500 dark:text-stone-300 text-lg">
           <Main />
           <NextScript />
         </body>

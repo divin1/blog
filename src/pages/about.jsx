@@ -1,50 +1,50 @@
-import Layout from "components/layout";
-import Head from "next/head";
-import styles from "styles/about.module.css";
-
-import config from "../../config";
+import Container from "components/Container";
+import Layout from "components/Layout";
+import SEO from "components/SEO";
+import config from "config";
 
 function About() {
   return (
     <>
+      <SEO />
       <Layout>
-        <Head>
-          <title>ndv</title>
-          <meta name="description" content="about ndv" />
-          <meta property="og:title" content="about - ndv's blog" />
-          <meta property="og:description" content="about ndv" />
-        </Head>
-        <h1 className={styles.title}>About</h1>
-        <h3>Hi</h3>
-        <p>
-          I was born in 1996 and live in Switzerland. I studied Computer
-          Science, and right after university I joined a young and ambitious
-          startup on a mission to revulutionize the processes of one of the most
-          stagnant fields.
-        </p>
-        <p>
-          In general, I like to understand and simplify things. <br />
-          The goal of this blog is to expose my ideas and opinions throughout my
-          journey. You will find articles and essays on anything that can be
-          simplified in life, with the utmost goal of self actualization:
-        </p>
-        <ul>
-          <li>Entrepreneurship</li>
-          <li>Work and career</li>
-          <li>Personal economy</li>
-          <li>Tech</li>
-          <li>Philosophy</li>
-        </ul>
-        <p>
-          Hope you enjoy your stay.
-          <br />
-          <b>- Nicolas</b>
-        </p>
-        <h2 className={styles.title}>Contact</h2>
-        <p>
-          Feel free to send me an email at{" "}
-          <a href={`mailto:${config.email}`}>{config.email}</a>.
-        </p>
+        <Container>
+          <p className="pt-16">
+            I was born in 1996, grew up and still live in Switzerland. <br />I
+            studied Computer Science and, right after university, I joined a
+            young and ambitious startup on a mission to revulutionize the
+            processes of one of the most stagnant business fields.
+          </p>
+          <p className="pt-8">
+            I like to learn, understand and simplify things. <br />
+            The goal of this blog is to expose thoughts, ideas and processes,
+            trasparently, throughout my journey. You will find articles on
+            anything that intersects with the modern human condition, and the
+            utmost goal of self actualization:
+          </p>
+          <ul className="p-4 list-disc list-inside">
+            <li>Entrepreneurship</li>
+            <li>Work and career</li>
+            <li>Personal economy</li>
+            <li>Technology</li>
+            <li>Philosophy</li>
+          </ul>
+          <p>
+            Hope you enjoy your stay.
+            <br />
+            <b>Nicolas</b>
+          </p>
+          <h2 className="text-stone-900 dark:text-stone-50 font-bold text-xl mt-24">
+            Contact
+          </h2>
+          <p>
+            Feel free to send me an email at{" "}
+            <a href={`mailto:${config.email}`}>
+              {config.email.replace("@", " [at] ")}
+            </a>
+            .
+          </p>
+        </Container>
       </Layout>
     </>
   );
