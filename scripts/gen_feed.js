@@ -1,8 +1,10 @@
-const Feed = require('feed').Feed;
-const config = require('../src/config');
-const matter = require('gray-matter');
-const fs = require('fs');
-const join = require('path').join;
+const Feed = require("feed").Feed;
+const config = require("../src/config");
+const matter = require("gray-matter");
+const fs = require("fs");
+const join = require("path/join");
+const ReactDOMServer = require("react-dom/server");
+const MDXRemote = require("next-mdx-remote/MDXRemote");
 
 const articlesDir = join(process.cwd(), "/src/articles");
 
@@ -23,7 +25,10 @@ async function getArticleBySlug(slug, fields = []) {
       article[field] = realSlug;
     }
     if (field === "content") {
-      article[field] = content;
+      const htmlContent = ReactDOMServer.renderToStaticMarkup(
+        <MDXRemote {...content} components={MDXComponents} />
+      );
+      article[field] = htmlContent;
     }
     if (data[field]) {
       article[field] = data[field];
@@ -43,7 +48,6 @@ async function getArticles(fields = []) {
 }
 
 (async function genFeed() {
-  
   const feed = new Feed({
     title: config.siteName,
     description: "All articles of the blog.",
@@ -82,7 +86,6 @@ async function getArticles(fields = []) {
       id: article.slug,
       link: `${config.siteUrl}/articles/${article.slug}`,
       description: article.exceprt,
-      content: article.content,
       author: [
         {
           name: config.author,
@@ -90,7 +93,7 @@ async function getArticles(fields = []) {
           link: `${config.siteUrl}/about`,
         },
       ],
-      date: new Date(article.date),
+      date: new Date(article.date).toISOString(),
     });
   });
 
