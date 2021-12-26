@@ -7,10 +7,15 @@ function Footer() {
       <span>ndv {new Date().getFullYear()}</span>
 
       <div className="flex items-center space-x-8">
-        <a href="/rss.xml" target="_blank">
+        <a href="/rss.xml" target="_blank" aria-label="RSS">
           <Rss />
         </a>
-        <a href="https://github.com/divin1" target="_blank" rel="noreferrer">
+        <a
+          href="https://github.com/divin1"
+          target="_blank"
+          aria-label="GitHub"
+          rel="noreferrer"
+        >
           <GitHub />
         </a>
         <ThemeChanger />
