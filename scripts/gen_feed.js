@@ -2,9 +2,7 @@ const Feed = require("feed").Feed;
 const config = require("../src/config");
 const matter = require("gray-matter");
 const fs = require("fs");
-const join = require("path/join");
-const ReactDOMServer = require("react-dom/server");
-const MDXRemote = require("next-mdx-remote/MDXRemote");
+const join = require("path").join;
 
 const articlesDir = join(process.cwd(), "/src/articles");
 
@@ -24,12 +22,6 @@ async function getArticleBySlug(slug, fields = []) {
     if (field === "slug") {
       article[field] = realSlug;
     }
-    if (field === "content") {
-      const htmlContent = ReactDOMServer.renderToStaticMarkup(
-        <MDXRemote {...content} components={MDXComponents} />
-      );
-      article[field] = htmlContent;
-    }
     if (data[field]) {
       article[field] = data[field];
     }
@@ -40,10 +32,12 @@ async function getArticleBySlug(slug, fields = []) {
 
 async function getArticles(fields = []) {
   const slugs = getArticleSlugs();
-  const articles = slugs
-    .map(async (slug) => await getArticleBySlug(slug, fields))
-    .sort((a, b) => new Date(b.date) - new Date(a.date));
-
+  let articles = [];
+  slugs.forEach((slug) => {
+    articles.push(getArticleBySlug(slug, fields));
+  });
+  articles = await Promise.all(articles);
+  articles.sort((a, b) => new Date(b.date) - new Date(a.date));
   return articles;
 }
 
@@ -57,11 +51,11 @@ async function getArticles(fields = []) {
     image: `${config.siteUrl}/banner.jpg`,
     favicon: `${config.siteUrl}/favicon.ico`,
     copyright: `All rights reserved ${new Date().getFullYear()}, ${
-      config.owner
+      config.author
     }`,
+    generator: "https://github.com/divin1/blog/blob/main/scripts/gen_feed.js",
     feedLinks: {
       rss: `${config.siteUrl}/rss.xml`,
-      atom: `${config.siteUrl}/atom.xml`,
     },
     author: {
       name: config.author,
@@ -93,7 +87,7 @@ async function getArticles(fields = []) {
           link: `${config.siteUrl}/about`,
         },
       ],
-      date: new Date(article.date).toISOString(),
+      date: new Date(article.date),
     });
   });
 

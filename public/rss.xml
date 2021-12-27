@@ -4,21 +4,22 @@
         <title>ndv</title>
         <link>https://divin.me</link>
         <description>All articles of the blog.</description>
-        <lastBuildDate>Mon, 27 Dec 2021 12:20:36 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 27 Dec 2021 12:39:45 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
-        <generator>https://github.com/jpmonette/feed</generator>
+        <generator>https://github.com/divin1/blog/blob/main/scripts/gen_feed.js</generator>
         <language>en</language>
         <image>
             <title>ndv</title>
             <url>https://divin.me/banner.jpg</url>
             <link>https://divin.me</link>
         </image>
-        <copyright>All rights reserved 2021, undefined</copyright>
+        <copyright>All rights reserved 2021, ndv</copyright>
         <atom:link href="https://divin.me/rss.xml" rel="self" type="application/rss+xml"/>
         <item>
-            <link>https://divin.me/articles/undefined</link>
-            <guid>https://divin.me/articles/undefined</guid>
-            <pubDate>Invalid Date</pubDate>
+            <title><![CDATA[Hello World 1]]></title>
+            <link>https://divin.me/articles/hello-mdx</link>
+            <guid>hello-mdx</guid>
+            <pubDate>Thu, 24 Jun 2021 16:29:02 GMT</pubDate>
             <author>divicolas@gmail.com (ndv)</author>
         </item>
     </channel>
