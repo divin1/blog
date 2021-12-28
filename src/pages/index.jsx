@@ -16,7 +16,7 @@ function Home({ articles }) {
               date={article.date}
               readTime={article.readTime}
               title={article.title}
-              excerpt={article.excerpt}
+              abstract={article.abstract}
               slug={article.slug}
             />
           ))}
@@ -31,7 +31,7 @@ export async function getStaticProps() {
     "date",
     "title",
     "description",
-    "excerpt",
+    "abstract",
     "date",
     "readTime",
     "slug",

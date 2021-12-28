@@ -36,7 +36,7 @@ export async function getStaticProps({ params }) {
   const article = await getArticleBySlug(params.slug, [
     "title",
     "description",
-    "excerpt",
+    "abstract",
     "date",
     "readTime",
     "slug",

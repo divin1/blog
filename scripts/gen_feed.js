@@ -69,7 +69,7 @@ async function getArticles(fields = []) {
     "title",
     "description",
     "content",
-    "excerpt",
+    "abstract",
     "date",
     "slug",
   ]);

@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-function ArticlePreview({ date, readTime, title, excerpt, slug }) {
+function ArticlePreview({ date, readTime, title, abstract, slug }) {
   return (
     <article className="pt-16">
       <Link href={`/articles/${slug}`} passHref>
@@ -8,7 +8,7 @@ function ArticlePreview({ date, readTime, title, excerpt, slug }) {
           {title}
         </h1>
       </Link>
-      <p>{excerpt}</p>
+      <p>{abstract}</p>
       <span className="text-base">
         {new Date(date).toDateString()} &mdash; {readTime} min read
       </span>
