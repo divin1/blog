@@ -4,15 +4,27 @@ import Layout from "components/Layout";
 import SEO from "components/SEO";
 import Share from "components/Share";
 import config from "config";
+import { event } from "lib/analytics";
 import { getArticleBySlug, getArticles } from "lib/api";
 import ErrorPage from "next/error";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 function ArticleServer({ article }) {
   const router = useRouter();
   if (!router.isFallback && !article?.slug) {
     return <ErrorPage statusCode={404} />;
   }
+
+  // analytics
+  useEffect(() => {
+    event({
+      action: "Article Viewed",
+      params: {
+        slug: article.slug,
+      },
+    });
+  }, []);
 
   return (
     <Layout>
