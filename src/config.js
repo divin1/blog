@@ -1,10 +1,10 @@
 module.exports = {
-  author: "ndv",
+  author: "Nicolas",
   email: "divicolas@gmail.com",
-  siteName: "ndv",
+  siteName: "Nicolas' Blog",
   siteUrl: "https://divin.me",
-  siteTitle: "ndv",
-  siteDescription: "ndv's blog",
+  siteTitle: "Nicolas' Blog",
+  siteDescription: "Nicolas' Blog",
   defaultSocialBanner: "/banner.jpg",
   twitter: "divicolas",
 };
