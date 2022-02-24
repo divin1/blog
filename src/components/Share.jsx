@@ -11,7 +11,7 @@ function Share({ url, title }) {
   return (
     <>
       <div className="flex flex-col justify-center items-center space-y-4 p-16">
-        <span>Enjoyed? Consider sharing.</span>
+        <span className="text-base">Share it</span>
         <div className="flex space-x-8 justify-center">
           <a
             href={twitterUrl}
