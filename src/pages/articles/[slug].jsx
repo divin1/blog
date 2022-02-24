@@ -12,7 +12,7 @@ import { useEffect } from "react";
 
 function ArticleServer({ article }) {
   const router = useRouter();
-  if (!router.isFallback && !article?.slug) {
+  if ((!router.isFallback && !article?.slug) || article.hidden) {
     return <ErrorPage statusCode={404} />;
   }
 
@@ -46,6 +46,7 @@ function ArticleServer({ article }) {
 
 export async function getStaticProps({ params }) {
   const article = await getArticleBySlug(params.slug, [
+    "hidden",
     "title",
     "description",
     "abstract",
