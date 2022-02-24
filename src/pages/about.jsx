@@ -10,25 +10,16 @@ function About() {
       <Layout>
         <Container>
           <p className="pt-16">
-            I was born in 1996, grew up and still live in Switzerland. <br />I
+            I'm Nicolas. I was born in 1996 and I'm from Switzerland. <br />I
             studied Computer Science and, right after university, I joined a
             young and ambitious startup on a mission to revolutionize the
             processes of one of the most stagnant business fields.
           </p>
           <p className="pt-8">
             I like to learn, understand and simplify things. <br />
-            The goal of this blog is to expose my thoughts, ideas and processes,
-            trasparently and throughout my journey. <br />
-            You will find articles on anything that intersects with the modern
-            human condition, and the utmost goal of self actualization:
+            The goal of this blog is to trasparently expose what I learn, my
+            thoughts, ideas and processes throughout my journey. <br />
           </p>
-          <ul className="p-4 list-disc list-inside">
-            <li>Entrepreneurship</li>
-            <li>Work and career</li>
-            <li>Personal economy</li>
-            <li>Technology</li>
-            <li>Philosophy</li>
-          </ul>
           <p>
             Hope you enjoy your stay.
             <br />
