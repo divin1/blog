@@ -1,8 +1,10 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import "styles/main.scss";
 
+import keys from "keys";
 import { pageView } from "lib/analytics";
 import { useRouter } from "next/router";
+import Script from "next/script";
 import { ThemeProvider } from "next-themes";
 import { useEffect } from "react";
 
@@ -22,9 +24,33 @@ function MyApp({ Component, pageProps }) {
   }, [router.events]);
 
   return (
-    <ThemeProvider attribute="class" defaultTheme="system">
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <>
+      <ThemeProvider attribute="class" defaultTheme="system">
+        <Component {...pageProps} />
+      </ThemeProvider>
+
+      {/* Global Site Tag (gtag.js) - Google Analytics */}
+      <Script
+        async
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${keys.GOOGLE_ANALYTICS}`}
+      />
+      {/* eslint-disable react/no-danger */}
+      <Script
+        id="gtag-init"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${keys.GOOGLE_ANALYTICS}', {
+                  page_path: window.location.pathname,
+                });
+              `,
+        }}
+      />
+    </>
   );
 }
 
