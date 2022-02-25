@@ -1,4 +1,4 @@
-import { meta } from "meta.js";
+import { meta } from "config";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
