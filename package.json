@@ -10,7 +10,8 @@
     "start": "next start",
     "lint": "next lint --fix",
     "build-feed": "node ./scripts/gen_feed",
-    "build-sitemap": "node ./scripts/gen_sitemap"
+    "build-sitemap": "node ./scripts/gen_sitemap",
+    "analyze": "ANALYZE=true next build"
   },
   "dependencies": {
     "@next/bundle-analyzer": "^12.1.0",
