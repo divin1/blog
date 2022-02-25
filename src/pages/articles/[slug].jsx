@@ -3,7 +3,7 @@ import Container from "components/Container";
 import Layout from "components/Layout";
 import SEO from "components/SEO";
 import Share from "components/Share";
-import config from "config";
+import { meta } from "config";
 import { getArticleBySlug, getArticles } from "lib/api";
 import ErrorPage from "next/error";
 import { useRouter } from "next/router";
@@ -23,10 +23,7 @@ function ArticleServer({ article }) {
       />
       <Container>
         <Article content={article.content} date={article.date} />
-        <Share
-          title={article.title}
-          url={`${config.siteUrl}${router.asPath}`}
-        />
+        <Share title={article.title} url={`${meta.siteUrl}${router.asPath}`} />
       </Container>
     </Layout>
   );

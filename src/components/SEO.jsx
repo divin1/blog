@@ -1,13 +1,13 @@
-import config from "config.js";
+import { meta } from "meta.js";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
 function SEO({
-  title = config.siteTitle,
-  description = config.siteDescription,
+  title = meta.siteTitle,
+  description = meta.siteDescription,
   keywords = [],
   ogType = "website",
-  ogImage = config.defaultSocialBanner,
+  ogImage = meta.defaultSocialBanner,
 }) {
   const router = useRouter();
   return (
@@ -18,9 +18,9 @@ function SEO({
         <meta name="description" content={description} />
         <meta name="keywords" content={keywords.join(", ")} />
         <meta property="og:locale" content="en_US" />
-        <meta property="og:url" content={`${config.siteUrl}${router.asPath}`} />
+        <meta property="og:url" content={`${meta.siteUrl}${router.asPath}`} />
         <meta property="og:type" content={ogType} />
-        <meta property="og:site_name" content={config.siteName} />
+        <meta property="og:site_name" content={meta.siteName} />
         <meta property="og:description" content={description} />
         <meta property="og:title" content={title} />
         {typeof ogImage === "string" ? (
@@ -31,12 +31,12 @@ function SEO({
           ))
         )}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content={config.twitter} />
+        <meta name="twitter:site" content={meta.twitter} />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta
           name="twitter:image"
-          content={`${config.siteUrl}/${config.defaultSocialBanner}`}
+          content={`${meta.siteUrl}/${meta.defaultSocialBanner}`}
         />
       </Head>
     </>

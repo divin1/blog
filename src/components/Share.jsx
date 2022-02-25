@@ -1,10 +1,10 @@
-import config from "config";
+import { meta } from "config.js";
 import { Linkedin, Twitter } from "react-feather";
 
 function Share({ url, title }) {
   const twitterUrl = `http://twitter.com/share?url=${encodeURIComponent(
     url
-  )}&text=${title}&via=${config.twitter}`;
+  )}&text=${title}&via=${meta.twitter}`;
   const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
     url
   )}`;

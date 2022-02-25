@@ -1,7 +1,7 @@
 import Container from "components/Container";
 import Layout from "components/Layout";
 import SEO from "components/SEO";
-import config from "config";
+import { meta } from "config";
 
 function About() {
   return (
@@ -31,10 +31,10 @@ function About() {
           <p>
             Feel free to send me an email at{" "}
             <a
-              href={`mailto:${config.email}`}
+              href={`mailto:${meta.email}`}
               className="text-stone-500 dark:text-stone-300 hover:text-secondary-400 dark:hover:text-secondary-400"
             >
-              {config.email.replace("@", " [at] ")}
+              {meta.email.replace("@", " [at] ")}
             </a>
             .
           </p>

@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import "styles/main.scss";
 
-import keys from "keys";
+import { plugin } from "config";
 import { pageView } from "lib/analytics";
 import { useRouter } from "next/router";
 import Script from "next/script";
@@ -33,7 +33,7 @@ function MyApp({ Component, pageProps }) {
       <Script
         async
         strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${keys.GOOGLE_ANALYTICS}`}
+        src={`https://www.googletagmanager.com/gtag/js?id=${plugin.GOOGLE_ANALYTICS}`}
       />
       {/* eslint-disable react/no-danger */}
       <Script
@@ -44,7 +44,7 @@ function MyApp({ Component, pageProps }) {
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
-                gtag('config', '${keys.GOOGLE_ANALYTICS}', {
+                gtag('config', '${plugin.GOOGLE_ANALYTICS}', {
                   page_path: window.location.pathname,
                 });
               `,

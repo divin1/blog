@@ -1,7 +1,7 @@
-import keys from "keys";
+import { plugin } from "config";
 
 export function pageView(url) {
-  window.gtag("config", keys.GOOGLE_ANALYTICS, {
+  window.gtag("config", plugin.GOOGLE_ANALYTICS, {
     page_path: url,
   });
 }
