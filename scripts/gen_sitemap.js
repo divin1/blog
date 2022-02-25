@@ -8,12 +8,12 @@ const config = require("../src/config");
   const pages = await globby([
     "src/pages/*.jsx",
     "src/articles/**/*.mdx",
+    "!src/articles/**/_*.mdx", // ignore drafts
     "!src/pages/_*.jsx",
   ]);
 
-  const sitemap = `
-        <?xml version="1.0" encoding="UTF-8"?>
-        <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  // TODO: fetch article objects with front-matter and use the "updated" property for <lastmod>
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
             ${pages
               .map((page) => {
                 const path = page
@@ -22,7 +22,7 @@ const config = require("../src/config");
                   .replace(".jsx", "")
                   .replace(".mdx", "")
                   .replace("/rss.xml", "");
-                const route = path === "/index" ? "" : path;
+                const route = path === "/index" ? "/" : path;
                 if (
                   page === `pages/404.js` ||
                   page === `pages/articles/[...slug].js`
@@ -32,6 +32,8 @@ const config = require("../src/config");
                 return `
                         <url>
                             <loc>${config.siteUrl}${route}</loc>
+                            <lastmod>${new Date().toISOString()}</lastmod>
+                            <changefreq>monthly</changefreq>
                         </url>
                     `;
               })

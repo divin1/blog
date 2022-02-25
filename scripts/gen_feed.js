@@ -65,6 +65,8 @@ async function getArticles(fields = []) {
   });
 
   const articles = await getArticles([
+    "hidden",
+    "draft",
     "date",
     "title",
     "description",
@@ -74,22 +76,24 @@ async function getArticles(fields = []) {
     "slug",
   ]);
 
-  articles.forEach((article) => {
-    feed.addItem({
-      title: article.title,
-      id: article.slug,
-      link: `${config.siteUrl}/articles/${article.slug}`,
-      description: article.exceprt,
-      author: [
-        {
-          name: config.author,
-          email: config.email,
-          link: `${config.siteUrl}/about`,
-        },
-      ],
-      date: new Date(article.date),
+  articles
+    .filter((article) => !article.draft && !article.hidden)
+    .forEach((article) => {
+      feed.addItem({
+        title: article.title,
+        id: article.slug,
+        link: `${config.siteUrl}/articles/${article.slug}`,
+        description: article.exceprt,
+        author: [
+          {
+            name: config.author,
+            email: config.email,
+            link: `${config.siteUrl}/about`,
+          },
+        ],
+        date: new Date(article.date),
+      });
     });
-  });
 
   const rssPath = join(process.cwd(), "/public/rss.xml");
   fs.writeFileSync(rssPath, feed.rss2());

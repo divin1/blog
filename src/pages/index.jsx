@@ -27,16 +27,20 @@ function Home({ articles }) {
 }
 
 export async function getStaticProps() {
-  const articles = await getArticles([
-    "date",
-    "title",
-    "description",
-    "abstract",
-    "date",
-    "readTime",
-    "slug",
-    "content",
-  ]);
+  const articles = (
+    await getArticles([
+      "date",
+      "draft",
+      "hidden",
+      "title",
+      "description",
+      "abstract",
+      "date",
+      "readTime",
+      "slug",
+      "content",
+    ])
+  ).filter((a) => !a.draft && !a.hidden);
 
   return {
     props: { articles },
