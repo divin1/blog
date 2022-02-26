@@ -5,7 +5,7 @@ Simple, statically-rendered, built with the powerful combo of [Next.js](https://
 
 Other features:
 
-- Next.js 12 (node 14)
+- Next.js 12 (node 16)
 - ESLint + Prettier
 - Themes via [next-themes](https://github.com/pacocoursey/next-themes)
 - Icons from [feathericons.com](https://feathericons.com/) via [react-feather](https://github.com/feathericons/react-feather)
