@@ -20,11 +20,11 @@ function Cookies() {
     <Dialog
       open={isOpen}
       onClose={() => close()}
-      className="fixed z-10 inset-0 overflow-y-auto"
+      className="fixed inset-0 z-10 overflow-y-auto"
     >
-      <div className="flex items-center justify-center min-h-screen">
+      <div className="flex min-h-screen items-center justify-center">
         <Dialog.Overlay className="fixed inset-0 bg-black opacity-30" />
-        <div className="relative bg-white dark:bg-stone-900 rounded max-w-sm mx-auto shadow-md rounded-xl p-4">
+        <div className="relative mx-auto max-w-sm rounded rounded-xl bg-white p-4 shadow-md dark:bg-stone-900">
           <Dialog.Title className="text-center">
             <span className="animate-bounce">🍪</span>
           </Dialog.Title>
@@ -41,7 +41,7 @@ function Cookies() {
             to enable analytics to monitor activity.
             <br />
             <Link href="articles/transparency" passHref>
-              <a className="underline text-stone-500 dark:text-stone-300 hover:text-secondary-400 dark:hover:text-secondary-400">
+              <a className="text-stone-500 underline hover:text-secondary-400 dark:text-stone-300 dark:hover:text-secondary-400">
                 Here's my full statement
               </a>
             </Link>
