@@ -3,7 +3,7 @@ import { GitHub, Rss } from "react-feather";
 
 function Footer() {
   return (
-    <footer className="w-full min-h-32 p-12 flex flex-col text-base space-y-4 items-center dark:bg-stone-900">
+    <footer className="min-h-32 flex w-full flex-col items-center space-y-4 p-12 text-base dark:bg-stone-900">
       <span>ndv {new Date().getFullYear()}</span>
 
       <div className="flex items-center space-x-8">

@@ -12,8 +12,8 @@ const components = {
 function Article({ content, date }) {
   return (
     <article className="pt-16">
-      <span className="text-sm ml-4">{new Date(date).toDateString()}</span>
-      <div className="mx-auto prose prose-stone prose-img:rounded-md prose-img:shadow-md prose-h1:text-secondary-400 prose-a:text-primary-400 hover:prose-a:text-primary-500 dark:prose-invert prose-p:text-lg">
+      <span className="ml-4 text-sm">{new Date(date).toDateString()}</span>
+      <div className="prose prose-stone mx-auto prose-h1:text-secondary-400 prose-p:text-lg prose-a:text-primary-400 hover:prose-a:text-primary-500 prose-img:rounded-md prose-img:shadow-md dark:prose-invert">
         <MDXRemote {...content} components={components} />
       </div>
     </article>

@@ -23,24 +23,24 @@ const Header = () => {
 
   return (
     <header
-      className={`sticky w-full top-0 z-20 bg-stone-100 dark:bg-stone-900 bg-opacity-30 dark:bg-opacity-30 backdrop-filter backdrop-saturate-150 backdrop-blur-sm firefox:bg-opacity-100 dark:firefox:bg-opacity-100 ${
+      className={`firefox:bg-opacity-100 dark:firefox:bg-opacity-100 sticky top-0 z-20 w-full bg-stone-100 bg-opacity-30 backdrop-blur-sm backdrop-saturate-150 backdrop-filter dark:bg-stone-900 dark:bg-opacity-30 ${
         isTop
           ? "border-none"
           : "border-b border-stone-200 dark:border-stone-800"
       }`}
     >
-      <nav className="flex items-center p-6 space-x-4">
+      <nav className="flex items-center space-x-4 p-6">
         <Link href="/" passHref>
-          <div className="bg-gradient-to-r from-rose-400 to-indigo-500 h-8 w-8 rounded-full cursor-pointer hover:animate-pulse" />
+          <div className="h-8 w-8 cursor-pointer rounded-full bg-gradient-to-r from-rose-400 to-indigo-500 hover:animate-pulse" />
         </Link>
         <div className="grow" />
         <Link href="/" passHref>
-          <a className="text-stone-500 dark:text-stone-300 hover:text-secondary-400 dark:hover:text-secondary-400">
+          <a className="text-stone-500 hover:text-secondary-400 dark:text-stone-300 dark:hover:text-secondary-400">
             Articles
           </a>
         </Link>
         <Link href="/about" passHref>
-          <a className="text-stone-500 dark:text-stone-300 hover:text-secondary-400 dark:hover:text-secondary-400">
+          <a className="text-stone-500 hover:text-secondary-400 dark:text-stone-300 dark:hover:text-secondary-400">
             About
           </a>
         </Link>

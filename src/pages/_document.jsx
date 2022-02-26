@@ -17,7 +17,7 @@ export default class MyDocument extends Document {
           />
           <link rel="alternate" type="application/rss+xml" href="/rss.xml" />
         </Head>
-        <body className="antialiased bg-stone-100 dark:bg-stone-900 text-stone-500 dark:text-stone-300 text-lg">
+        <body className="bg-stone-100 text-lg text-stone-500 antialiased dark:bg-stone-900 dark:text-stone-300">
           <Main />
           <NextScript />
         </body>

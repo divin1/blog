@@ -4,7 +4,7 @@ function ArticlePreview({ date, readTime, title, abstract, slug }) {
   return (
     <article className="pt-16">
       <Link href={`/articles/${slug}`} passHref>
-        <h1 className="text-stone-900 dark:text-stone-100 hover:text-secondary-400 dark:hover:text-secondary-400 font-bold text-xl cursor-pointer transition ease-in-out duration-500">
+        <h1 className="cursor-pointer text-xl font-bold text-stone-900 transition duration-500 ease-in-out hover:text-secondary-400 dark:text-stone-100 dark:hover:text-secondary-400">
           {title}
         </h1>
       </Link>

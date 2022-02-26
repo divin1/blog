@@ -10,13 +10,13 @@ function Share({ url, title }) {
   )}`;
   return (
     <>
-      <div className="flex flex-col justify-center items-center space-y-4 p-16">
+      <div className="flex flex-col items-center justify-center space-y-4 p-16">
         <span className="text-base">Share it</span>
-        <div className="flex space-x-8 justify-center">
+        <div className="flex justify-center space-x-8">
           <a
             href={twitterUrl}
             target="_blank"
-            className="text-stone-500 dark:text-stone-300 hover:text-secondary-400 dark:hover:text-secondary-400"
+            className="text-stone-500 hover:text-secondary-400 dark:text-stone-300 dark:hover:text-secondary-400"
             rel="noreferrer"
           >
             <Twitter />
@@ -24,7 +24,7 @@ function Share({ url, title }) {
           <a
             href={linkedinUrl}
             target="_blank"
-            className="text-stone-500 dark:text-stone-300 hover:text-secondary-400 dark:hover:text-secondary-400"
+            className="text-stone-500 hover:text-secondary-400 dark:text-stone-300 dark:hover:text-secondary-400"
             rel="noreferrer"
           >
             <Linkedin />

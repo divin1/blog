@@ -25,14 +25,14 @@ function About() {
             <br />
             <b>Nicolas</b>
           </p>
-          <h2 className="text-stone-900 dark:text-stone-50 font-bold text-xl mt-24">
+          <h2 className="mt-24 text-xl font-bold text-stone-900 dark:text-stone-50">
             Contact
           </h2>
           <p>
             Feel free to send me an email at{" "}
             <a
               href={`mailto:${config.email}`}
-              className="text-stone-500 dark:text-stone-300 hover:text-secondary-400 dark:hover:text-secondary-400"
+              className="text-stone-500 hover:text-secondary-400 dark:text-stone-300 dark:hover:text-secondary-400"
             >
               {config.email.replace("@", " [at] ")}
             </a>
