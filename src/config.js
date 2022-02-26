@@ -7,4 +7,5 @@ module.exports = {
   siteDescription: "Nicolas' Blog",
   defaultSocialBanner: "/banner.jpg",
   twitter: "divicolas",
+  github: "divin1"
 };

@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import "styles/main.scss";
 
+import Cookies from "components/Cookies";
 import keys from "keys";
 import { pageView } from "lib/analytics";
 import { useRouter } from "next/router";
@@ -26,6 +27,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <ThemeProvider attribute="class" defaultTheme="system">
+        <Cookies />
         <Component {...pageProps} />
       </ThemeProvider>
 
