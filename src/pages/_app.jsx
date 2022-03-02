@@ -26,11 +26,6 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
-      <ThemeProvider attribute="class" defaultTheme="system">
-        <Cookies />
-        <Component {...pageProps} />
-      </ThemeProvider>
-
       {/* Global Site Tag (gtag.js) - Google Analytics */}
       <Script
         async
@@ -52,6 +47,10 @@ function MyApp({ Component, pageProps }) {
               `,
         }}
       />
+      <ThemeProvider attribute="class" defaultTheme="system">
+        <Cookies />
+        <Component {...pageProps} />
+      </ThemeProvider>
     </>
   );
 }
