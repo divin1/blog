@@ -10,6 +10,8 @@ const config = require("../src/config");
     "src/articles/**/*.mdx",
     "!src/articles/**/_*.mdx", // ignore drafts
     "!src/pages/_*.jsx",
+    "!src/pages/404.jsx",
+    "!src/pages/500.jsx",
   ]);
 
   // TODO: fetch article objects with front-matter and use the "updated" property for <lastmod>
