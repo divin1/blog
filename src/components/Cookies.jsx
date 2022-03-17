@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { Dialog } from "@headlessui/react";
-import Link from "next/link";
+import analytics from "lib/analytics";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
@@ -9,7 +9,7 @@ function Cookies() {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    const initialState = localStorage.getItem("cookies-notice") === null;
+    const initialState = localStorage.getItem("analytics-enabled") === null;
     setIsOpen(initialState);
   }, []);
 
@@ -20,7 +20,14 @@ function Cookies() {
   }, [router.asPath]);
 
   function close() {
-    localStorage.setItem("cookies-notice", true);
+    analytics.enabled = true;
+    localStorage.setItem("analytics-enabled", true);
+    setIsOpen(false);
+  }
+
+  function reject() {
+    analytics.enabled = false;
+    localStorage.setItem("analytics-enabled", false);
     setIsOpen(false);
   }
 
@@ -47,16 +54,17 @@ function Cookies() {
               cookies
             </a>{" "}
             to enable analytics to monitor activity.
-            <br />
-            <Link href="/articles/transparency" passHref>
-              <a className="text-stone-500 underline hover:text-secondary-400 dark:text-stone-300 dark:hover:text-secondary-400">
-                More on Data &#38; Privacy.
-              </a>
-            </Link>
           </Dialog.Description>
 
           <div className="flex justify-center">
-            <button onClick={close} type="button" className="font-bold">
+            <button
+              onClick={reject}
+              type="button"
+              className="mx-2 font-bold text-red-300 hover:text-red-400"
+            >
+              Reject
+            </button>
+            <button onClick={close} type="button" className="mx-2 font-bold">
               Got it
             </button>
           </div>
