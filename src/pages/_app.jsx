@@ -3,7 +3,7 @@ import "styles/main.scss";
 
 import Cookies from "components/Cookies";
 import keys from "keys";
-import { pageView } from "lib/analytics";
+import analytics from "lib/analytics";
 import { useRouter } from "next/router";
 import Script from "next/script";
 import { ThemeProvider } from "next-themes";
@@ -13,8 +13,11 @@ function MyApp({ Component, pageProps }) {
   const router = useRouter();
 
   useEffect(() => {
+    // init analytics service
+    analytics.init(localStorage);
+
     const handleRouteChange = (url) => {
-      pageView(url);
+      analytics.pageView(url);
     };
     // subscribe on mount
     router.events.on("routeChangeComplete", handleRouteChange);
