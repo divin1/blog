@@ -12,7 +12,7 @@ Other features:
 - RSS feed generation (optionally Atom and JSON)
 - Sitemap generation
 - Google Charts
-- Google Analytics
+- Simple, privacy-focused analytics via [Micronalytics](https://microanalytics.io/)
 
 ## Get started
 
@@ -21,10 +21,8 @@ First, edit the config at `src/config.js` to suit your blog.
 Then, create a `.env` file in the project root for Google Analytics with your key:
 
 ```
-NEXT_PUBLIC_GOOGLE_ANALYTICS=<YOUR KEY>
+NEXT_PUBLIC_MICROANALYTICS_ID=<YOUR ID>
 ```
-
-Page views are automatically tracked on router route changes. To send custom events, use the `event` function from `src/lib/analytics.js`.
 
 ## Useful commands
 

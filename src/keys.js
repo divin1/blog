@@ -1,3 +1,3 @@
 module.exports = {
-  GOOGLE_ANALYTICS: process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS || null
+  MICROANALYTICS: process.env.NEXT_PUBLIC_MICROANALYTICS_ID || null
 }
