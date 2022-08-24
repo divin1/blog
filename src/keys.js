@@ -1,3 +1,3 @@
 module.exports = {
-  MICROANALYTICS: process.env.NEXT_PUBLIC_MICROANALYTICS_ID || null
+  MICROANALYTICS_ID: process.env.NEXT_PUBLIC_MICROANALYTICS_ID || null
 }
