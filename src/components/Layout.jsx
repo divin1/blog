@@ -8,7 +8,7 @@ function Layout({ children }) {
   const [allowAnalytics, setAllowAnalytics] = useState(true);
 
   useEffect(() => {
-    setAllowAnalytics(!!localStorage.getItem("allow-analytics"));
+    setAllowAnalytics(localStorage.getItem("allow-analytics") !== false);
   }, []);
 
   return (
