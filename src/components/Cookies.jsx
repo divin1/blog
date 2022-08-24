@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { Dialog } from "@headlessui/react";
-import analytics from "lib/analytics";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
@@ -9,7 +8,7 @@ function Cookies() {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    const initialState = localStorage.getItem("analytics-enabled") === null;
+    const initialState = localStorage.getItem("allow-analytics") === null;
     setIsOpen(initialState);
   }, []);
 
@@ -20,14 +19,12 @@ function Cookies() {
   }, [router.asPath]);
 
   function close() {
-    analytics.enabled = true;
-    localStorage.setItem("analytics-enabled", true);
+    localStorage.setItem("allow-analytics", true);
     setIsOpen(false);
   }
 
   function reject() {
-    analytics.enabled = false;
-    localStorage.setItem("analytics-enabled", false);
+    localStorage.setItem("allow-analytics", false);
     setIsOpen(false);
   }
 
@@ -53,7 +50,7 @@ function Cookies() {
             >
               cookies
             </a>{" "}
-            to enable analytics to monitor activity.
+            to see what's going on on my blog.
           </Dialog.Description>
 
           <div className="flex justify-center">
