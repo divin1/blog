@@ -14,9 +14,9 @@ const components = {
 function Article({ content, date }) {
   return (
     <article className="pt-16">
-      <div className="ml-4 mb-4 hover:ml-2">
+      <div className="mb-4">
         <Link href="/" passHref>
-          <a className="font-bold text-stone-500 hover:text-secondary-400 dark:text-stone-300 dark:hover:text-secondary-400">
+          <a className="font-bold text-stone-500 transition duration-500 ease-in-out hover:text-secondary-400 dark:text-stone-300 dark:hover:text-secondary-400">
             <span className="flex flex-row items-center">
               <ArrowLeft className="h4 mr-4 w-4" />
               All articles
