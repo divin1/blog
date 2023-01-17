@@ -29,12 +29,13 @@ function About() {
             Contact
           </h2>
           <p>
-            Feel free to send me an email at{" "}
+            Feel free to send me a message at{" "}
             <a
-              href={`mailto:${config.email}`}
+              href={`https://twitter.com/${config.twitter}`}
+              target="_blank"
               className="text-stone-500 hover:text-secondary-400 dark:text-stone-300 dark:hover:text-secondary-400"
             >
-              {config.email.replace("@", " [at] ")}
+              @{config.twitter}
             </a>
             .
           </p>
