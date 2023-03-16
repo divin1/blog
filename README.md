@@ -6,25 +6,15 @@ Simple, statically-rendered, built with the powerful combo of [Next.js](https://
 Other features:
 
 - Next.js 12 (node 16)
-- ESLint + Prettier
 - Themes via [next-themes](https://github.com/pacocoursey/next-themes)
 - Icons from [feathericons.com](https://feathericons.com/) via [react-feather](https://github.com/feathericons/react-feather)
-- RSS feed generation (optionally Atom and JSON)
-- Sitemap generation
+- Feed (RSS, Atom or JSON) & sitemap generation
 - Google Charts
-- Simple, privacy-focused analytics via [Micronalytics](https://microanalytics.io/)
+- Deployed automagically using [Vercel](https://vercel.com/)
 
 ## Get started
 
-First, edit the config at `src/config.js` to suit your blog.
-
-Then, create a `.env` file in the project root for Google Analytics with your key:
-
-```
-NEXT_PUBLIC_MICROANALYTICS_ID=<YOUR ID>
-```
-
-## Useful commands
+Edit the config at `src/config.js` to suit your blog's metadata.
 
 Start app locally:
 
@@ -32,7 +22,7 @@ Start app locally:
 npm run dev
 ```
 
-Run lint:
+Run linter:
 
 ```
 npm run lint
@@ -44,11 +34,8 @@ Build app:
 npm run build
 ```
 
-As `postbuild` both sitemap and feed will be generated.
+As `postbuild` both feed and sitemap are going to be generated.
 
-## Deployment
-
-Deployed using [Vercel](https://vercel.com/)
 
 ## License
 
