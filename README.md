@@ -6,7 +6,6 @@ Simple, statically-rendered, built with the powerful combo of [Next.js](https://
 Other features:
 
 - Next.js 12 (node 16)
-- Themes via [next-themes](https://github.com/pacocoursey/next-themes)
 - Icons from [feathericons.com](https://feathericons.com/) via [react-feather](https://github.com/feathericons/react-feather)
 - Feed (RSS, Atom or JSON) & sitemap generation
 - Google Charts

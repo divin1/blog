@@ -1,4 +1,3 @@
-import ThemeChanger from "components/ThemeChanger";
 import { GitHub, Rss } from "react-feather";
 
 function Footer() {
@@ -18,7 +17,6 @@ function Footer() {
         >
           <GitHub />
         </a>
-        <ThemeChanger />
       </div>
     </footer>
   );
