@@ -1,4 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+import clsx from "clsx";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -23,11 +24,11 @@ const Header = () => {
 
   return (
     <header
-      className={`firefox:bg-opacity-100 dark:firefox:bg-opacity-100 sticky top-0 z-20 w-full bg-stone-100 bg-opacity-30 backdrop-blur-sm backdrop-saturate-150 backdrop-filter dark:bg-stone-900 dark:bg-opacity-30 ${
-        isTop
-          ? "border-none"
-          : "border-b border-stone-200 dark:border-stone-800"
-      }`}
+      className={clsx({
+        "firefox:bg-opacity-100 dark:firefox:bg-opacity-100 sticky top-0 z-20 w-full bg-stone-100 bg-opacity-30 backdrop-blur-sm backdrop-saturate-150 backdrop-filter dark:bg-stone-900 dark:bg-opacity-30": true,
+        "border-none": isTop,
+        "border-b border-stone-200 dark:border-stone-800": !isTop,
+      })}
     >
       <nav className="flex items-center space-x-4 p-6">
         <Link href="/" passHref>
