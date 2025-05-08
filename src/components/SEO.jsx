@@ -1,4 +1,4 @@
-import config from "config.js";
+import config from "config";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
