@@ -3,7 +3,7 @@ import { GitHub, Linkedin, Rss } from "react-feather";
 
 function Footer() {
   return (
-    <footer className="min-h-32 flex w-full flex-col items-center space-y-4 p-12 text-base dark:bg-stone-900">
+    <footer className="flex min-h-32 w-full flex-col items-center space-y-4 p-12 text-base dark:bg-stone-900">
       <div className="flex items-center space-x-8">
         <a
           href={config.github}

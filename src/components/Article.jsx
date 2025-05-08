@@ -25,7 +25,7 @@ function Article({ content, date }) {
         </Link>
       </div>
       <span className="ml-4 text-sm">{new Date(date).toDateString()}</span>
-      <div className="prose prose-stone mx-auto prose-h1:text-secondary-400 prose-p:text-lg prose-a:text-primary-400 hover:prose-a:text-primary-500 prose-img:rounded-md prose-img:shadow-md dark:prose-invert">
+      <div className="prose prose-stone mx-auto dark:prose-invert prose-h1:text-secondary-400 prose-p:text-lg prose-a:text-primary-400 hover:prose-a:text-primary-500 prose-img:rounded-md prose-img:shadow-md">
         <MDXRemote {...content} components={components} />
       </div>
     </article>
