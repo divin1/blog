@@ -1,5 +1,6 @@
 module.exports = {
   author: "Nicolas",
+  fullName: "Nicolas Di Vittorio",
   siteName: "Nicolas",
   siteUrl: "https://divin.me",
   siteTitle: "Nicolas",
