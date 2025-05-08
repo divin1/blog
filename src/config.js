@@ -9,5 +9,5 @@ module.exports = {
   blogSrc: "https://github.com/divin1/blog",
   email: "hello@divin.me",
   github: "https://github.com/divin1",
-  linkedin: "https://www.linkedin.com/in/nicolas-di-vittorio"
+  linkedin: "https://www.linkedin.com/in/nicolas-divittorio"
 };
