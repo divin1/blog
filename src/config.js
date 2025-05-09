@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   author: "Nicolas",
   fullName: "Nicolas Di Vittorio",
   siteName: "Nicolas",
