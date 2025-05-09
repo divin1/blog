@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import "styles/main.scss";
+import "styles/global.css";
 
 import { Analytics } from "@vercel/analytics/react";
 
