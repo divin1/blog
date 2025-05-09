@@ -15,7 +15,7 @@ function ErrorPageLayout({ statusCode }) {
             : "Something went wrong. Not your fault so don't stress it."}
         </h2>
         <Link href="/" passHref>
-          <a>Back home</a>
+          Back home
         </Link>
       </div>
     </div>

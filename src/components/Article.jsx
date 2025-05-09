@@ -15,13 +15,15 @@ function Article({ content, date }) {
   return (
     <article className="pt-16">
       <div className="mb-4">
-        <Link href="/" passHref>
-          <a className="font-bold text-stone-500 transition duration-500 ease-in-out hover:text-secondary-400 dark:text-stone-300 dark:hover:text-secondary-400">
-            <span className="flex flex-row items-center">
-              <ArrowLeft className="h4 mr-4 w-4" />
-              All articles
-            </span>
-          </a>
+        <Link
+          href="/"
+          passHref
+          className="font-bold text-stone-500 transition duration-500 ease-in-out hover:text-secondary-400 dark:text-stone-300 dark:hover:text-secondary-400"
+        >
+          <span className="flex flex-row items-center">
+            <ArrowLeft className="h4 mr-4 w-4" />
+            All articles
+          </span>
         </Link>
       </div>
       <span className="ml-4 text-sm">{new Date(date).toDateString()}</span>
