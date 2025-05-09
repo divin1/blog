@@ -6,23 +6,21 @@ import { getArticles } from "lib/api";
 
 function Home({ articles }) {
   return (
-    <>
-      <Layout>
-        <SEO />
-        <Container>
-          {articles.map((article) => (
-            <ArticlePreview
-              key={article.slug}
-              date={article.date}
-              readTime={article.readTime}
-              title={article.title}
-              abstract={article.abstract}
-              slug={article.slug}
-            />
-          ))}
-        </Container>
-      </Layout>
-    </>
+    <Layout>
+      <SEO />
+      <Container>
+        {articles.map((article) => (
+          <ArticlePreview
+            key={article.slug}
+            date={article.date}
+            readTime={article.readTime}
+            title={article.title}
+            abstract={article.abstract}
+            slug={article.slug}
+          />
+        ))}
+      </Container>
+    </Layout>
   );
 }
 
