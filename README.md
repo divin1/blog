@@ -1,4 +1,9 @@
-# My blog @ https://divin.me
+# Blog
+
+**This project is deprecated, no longer maintained and has been replaced by [divin](https://github.com/divin1/divin).**
+
+
+---
 
 Source code of my personal blog, hosted at [divin.me](https://divin.me).
 Simple, statically-rendered, built with the powerful combo of [Next.js](https://nextjs.org/) + [MDX](https://mdxjs.com/) and styled using [TailwindCSS](https://github.com/tailwindlabs/tailwindcss).
